@@ -18,6 +18,9 @@ dev = [
 ]
 
 
+[tool.pytest.ini_options]
+addopts = "--ignore=test_0000_template.py"
+
 [tool.autoflake]
 remove-all-unused-imports = true
 remove-unused-variables = true
