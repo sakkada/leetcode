@@ -82,7 +82,6 @@ class Solution:
             return False
         slow, fast = head, head
         while fast.next:
-            print(fast)
             slow = slow.next
             fast = fast.next.next
             if slow == fast:

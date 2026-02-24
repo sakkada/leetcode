@@ -61,9 +61,14 @@ class ListNode:
         return self.val == other.val
 
     def as_list(self):
+        visited: set[int] = set()
         node = self
         yield node
         while node.next:
+            if id(node.next) in visited:
+                yield ListNode(node.next.val * 100000)
+                break
+            visited.add(id(node.next))
             yield node.next
             node = node.next
 
