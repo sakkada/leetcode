@@ -104,36 +104,21 @@ class Solution:
         return left
 
 
-node05 = ListNode(5, next=None)
-node04 = ListNode(4, next=node05)
-node01 = ListNode(1, next=node04)
-
-node14 = ListNode(4, next=None)
-node13 = ListNode(3, next=node14)
-node11 = ListNode(1, next=node13)
-
-node26 = ListNode(6, next=None)
-node22 = ListNode(2, next=node26)
-
-node306 = ListNode(6, next=None)
-node305 = ListNode(5, next=node306)
-node304 = ListNode(4, next=node305)
-node314 = ListNode(4, next=node304)
-node303 = ListNode(3, next=node314)
-node302 = ListNode(2, next=node303)
-node301 = ListNode(1, next=node302)
-node311 = ListNode(1, next=node301)
-
-node41 = ListNode(1, next=None)
-node42 = ListNode(2, next=node41)
+N = ListNode
 
 config = {
     "params": [
-        ({"lists": [node01, node11, node22]}, node311),
+        (
+            {"lists": [N(1, N(4, N(5))), N(1, N(3, N(4))), N(2, N(6))]},
+            N(1, N(1, N(2, N(3, N(4, N(4, N(5, N(6)))))))),
+        ),
         ({"lists": [None]}, None),
         ({"lists": [None, None, None]}, None),
         ({"lists": []}, None),
-        ({"lists": [None, node41]}, node41),
+        (
+            {"lists": [None, N(1, N(2))]},
+            N(1, N(2)),
+        ),
     ],
     "method": "mergeKLists",
 }

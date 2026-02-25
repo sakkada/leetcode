@@ -90,23 +90,22 @@ class Solution:
         return head.next
 
 
-l11 = ListNode(2, ListNode(4, ListNode(3)))
-l12 = ListNode(5, ListNode(6, ListNode(4)))
-l13 = ListNode(7, ListNode(0, ListNode(8)))
-
-l21 = ListNode(0)
-l22 = ListNode(0)
-l23 = ListNode(0)
-
-l31 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
-l32 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
-l33 = ListNode(8, ListNode(9, ListNode(9, ListNode(9, ListNode(0, ListNode(0, ListNode(0, ListNode(1))))))))
+N = ListNode
 
 config = {
     "params": [
-        ({"l1": l11, "l2": l12}, l13),
-        ({"l1": l21, "l2": l22}, l23),
-        ({"l1": l31, "l2": l32}, l33),
+        (
+            {"l1": N(2, N(4, N(3))), "l2": N(5, N(6, N(4)))},
+            N(7, N(0, N(8))),
+        ),
+        (
+            {"l1": N(0), "l2": N(0)},
+            N(0),
+        ),
+        (
+            {"l1": N(9, N(9, N(9, N(9, N(9, N(9, N(9))))))), "l2": N(9, N(9, N(9, N(9))))},
+            N(8, N(9, N(9, N(9, N(0, N(0, N(0, N(1)))))))),
+        ),
     ],
     "method": "addTwoNumbers",
 }

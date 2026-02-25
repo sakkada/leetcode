@@ -91,17 +91,15 @@ class Solution:
         return False
 
 
-n14 = ListNode(-4, next=None)
-n13 = ListNode(0, next=n14)
-n12 = ListNode(2, next=n13)
-n11 = ListNode(3, next=n12)
-n14.next = n12  # loop the list
+N = ListNode
 
-n22 = ListNode(2, next=None)
-n21 = ListNode(1, next=n22)
-n22.next = n21  # loop the list
+n11 = N(3, N(2, N(0, N(-4))))
+n11.next.next.next.next = n11.next  # -4 -> 2
 
-n31 = ListNode(1, next=None)
+n21 = N(1, N(2))
+n21.next.next = n21  # 2 -> 1
+
+n31 = N(1)
 
 config = {
     "params": [
